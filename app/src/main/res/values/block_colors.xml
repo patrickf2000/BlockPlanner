@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="block_colors">
+        <item>Cyan</item>
+        <item>Light Gray</item>
+        <item>Magenta</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+    </string-array>
+</resources>
