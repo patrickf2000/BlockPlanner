@@ -3,19 +3,17 @@ package co.patrickflynn.blockplanner
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
-import android.view.Gravity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
-import androidx.core.view.setPadding
-import androidx.fragment.app.DialogFragment
 
 class MainActivity : AppCompatActivity(), NewBlock.NoticeDialogListener {
+    val MAX_ROWS = 17;
+    val START_HOUR = 6;
     var rows = ArrayList<TextView>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,10 +29,10 @@ class MainActivity : AppCompatActivity(), NewBlock.NoticeDialogListener {
         // Add table rows
         var table : TableLayout = findViewById(R.id.time_table);
 
-        for (i in 0 .. 17) {
+        for (i in 0 .. MAX_ROWS) {
             var row : TableRow = TableRow(this);
 
-            var t = i + 6;
+            var t = i + START_HOUR;
 
             var time : TextView = TextView(this);
             time.setText(t.toString());
@@ -54,15 +52,11 @@ class MainActivity : AppCompatActivity(), NewBlock.NoticeDialogListener {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_clear -> {
                 val settings = getPreferences(Context.MODE_PRIVATE)
@@ -87,8 +81,8 @@ class MainActivity : AppCompatActivity(), NewBlock.NoticeDialogListener {
     override fun onDialogPositiveClick(dialog: NewBlock) {
         val settings = getPreferences(Context.MODE_PRIVATE)
 
-        var start = dialog.getStart() - 6
-        var end = dialog.getEnd() - 6
+        var start = dialog.getStart() - START_HOUR
+        var end = dialog.getEnd() - START_HOUR
         var task = dialog.getTask()
         val color = dialog.getColor()
 
@@ -117,7 +111,7 @@ class MainActivity : AppCompatActivity(), NewBlock.NoticeDialogListener {
     fun updateTableRows() {
         val settings = getPreferences(Context.MODE_PRIVATE)
 
-        for (i in 0 .. 17) {
+        for (i in 0 .. MAX_ROWS) {
             val key = "row" + i.toString()
             val task = settings.getString(key + "_task", "")
             val color = settings.getInt(key + "_color", Color.WHITE)

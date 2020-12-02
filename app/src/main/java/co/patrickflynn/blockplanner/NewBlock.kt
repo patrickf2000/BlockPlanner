@@ -8,7 +8,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.Spinner
-import androidx.core.view.get
 import androidx.fragment.app.DialogFragment
 
 class NewBlock : DialogFragment() {
@@ -24,7 +23,7 @@ class NewBlock : DialogFragment() {
             val builder = AlertDialog.Builder(it)
             var inflater = requireActivity().layoutInflater
 
-            var view = inflater.inflate(R.layout.fragment_new_block, null)
+            var view = inflater.inflate(R.layout.new_block_dialog, null)
             builder.setView(view)
 
             entry = view.findViewById(R.id.task_name_entry)
