@@ -4,7 +4,7 @@ This is a very simple Android app for planning your day using the block planning
 
 ![screenshot](./screenshot.jpg)
 
-I originally created this because I wanted to move away from the paper daily planner (an old composition notebook...). And before you asked why in the world I didn't use the app store, the answer is that I really couldn't find anything to match what I needed. I found one, but the layout was weird. So I decided I could write something to meet my needs in one day, and I was write. I mean really, the design is simple.
+I originally created this because I wanted to move away from the paper daily planner (an old composition notebook...). And before you asked why in the world I didn't use the app store, the answer is that I really couldn't find anything to match what I needed. I found one, but the layout was weird. So I decided I could write something to meet my needs in one day, and I was right. I mean really, the design is simple. Its a two-column layout, a little math to do the blocks, and you're done (okay I did have to create a mechanism to save and load, but that's not hard).
 
 I am planning on adding a second screen for writing any random things I might need... For example, in my notebook, I will generally write "work" or "school" down, then below write whatever parts of work or what school assignments I was going to do that day. Its fine at the moment, but this will bug me. I'm not planning on really doing much else after that except upgrading as needed. It doesn't store future days or do anything fancy, just be forewarned. Also, I have no idea if it looks good on anything except 10" tablets. I put it on Github so I can access it easily, and made it public in case someone finds it useful.
 
